@@ -1,0 +1,110 @@
+[
+  {
+    "name": "blog",
+    "display_name": null,
+    "description": "A generic blog post",
+    "created_at": "2025-10-24T08:25:30.232Z",
+    "updated_at": "2025-10-24T09:10:06.596Z",
+    "id": 104876975036720,
+    "schema": {
+      "title": {
+        "type": "text",
+        "pos": 0,
+        "id": "8CUi2aLzRZuwp8D4zkCEGQ"
+      },
+      "subtitle": {
+        "type": "text",
+        "pos": 1,
+        "id": "jofKTIUjQZ-RZTaFX2pKqQ"
+      },
+      "content": {
+        "type": "richtext",
+        "pos": 2,
+        "id": "4M1vgxvxRTe7JIQmIVDW2Q"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": true,
+    "preview_tmpl": null,
+    "is_nestable": false,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "blog",
+    "component_group_uuid": null,
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "featuredBlogs",
+    "display_name": null,
+    "description": "A list of blog posts to be featured",
+    "created_at": "2025-10-24T08:27:40.485Z",
+    "updated_at": "2025-10-24T09:10:21.231Z",
+    "id": 104877508553019,
+    "schema": {
+      "title": {
+        "type": "text",
+        "pos": 0,
+        "id": "hcSjdzj_RtC0aDHhC2unag"
+      },
+      "blogs": {
+        "type": "options",
+        "pos": 1,
+        "id": "e2ibtSK2T5CTOXlfMIp8wQ",
+        "source": "internal_stories",
+        "filter_content_type": [
+          "blog"
+        ]
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "featuredBlogs",
+    "component_group_uuid": null,
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "page",
+    "display_name": null,
+    "description": null,
+    "created_at": "2025-10-24T08:13:12.353Z",
+    "updated_at": "2025-10-24T08:13:12.353Z",
+    "id": 104873952688070,
+    "schema": {
+      "body": {
+        "type": "bloks",
+        "id": "0OHJQyu2TQiM8V0eJFnclQ"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": true,
+    "preview_tmpl": null,
+    "is_nestable": false,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "page",
+    "component_group_uuid": null,
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  }
+]
