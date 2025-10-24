@@ -1,10 +1,10 @@
 import { StoryblokComponent, useStoryblokState, getStoryblokApi } from "@storyblok/react";
 
 const Home = ({story}: any) => {
-  console.log('trhying?')
   story = useStoryblokState(story, {
    resolveRelations: ["blog"],
  });
+ 
  return (
    <div>
      <head>
