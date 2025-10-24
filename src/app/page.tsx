@@ -1,26 +1,13 @@
-import { getStoryblokApi } from "@/lib/storyblok";
 import { StoryblokStory } from "@storyblok/react/rsc";
+import { fetchStory } from "@/utils/fetchStory";
 
-const Home = async () => {
-  try {
-    const { data } = await fetchData();
-    return (
-      <div>
-        <head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
-        </head>
-        <StoryblokStory story={data.story} />
-      </div>
-    );
-  } catch (e) {
-    return <p> Something went wrong: {(e as Error).message}</p>;
-  }
-};
+type Params = Promise<{ slug?: string[] }>;
 
-const fetchData = async () => {
-  const storyblokApi = getStoryblokApi();
-  return await storyblokApi.get(`cdn/stories/home`);
-};
+const Page = async ({ params }: { params: Params }) => {
+  const slug = (await params).slug;
+  const pageData = await fetchStory("published", slug);
 
-export default Home;
+  return <StoryblokStory story={pageData.story} />;
+}
+
+export default Page;
