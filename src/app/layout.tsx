@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import StoryblokProvider from "./components/Storyblok/Provider";
-import Title from "./components/Title";
+
+import "./globals.css";
+import Hero from "./components/Intro/Hero";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +32,10 @@ const RootLayout = ({
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <div className="header-wrapper">
-            <Title />
+            <Hero />
           </div>
           <div className="content">{children}</div>
+          
         </body>
       </html>
     </StoryblokProvider>
