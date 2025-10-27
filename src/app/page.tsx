@@ -3,7 +3,7 @@ import { fetchStory } from "@/utils/fetchStory";
 
 import AboutMe from "./components/AboutMe/AboutMe";
 import Hero from "./components/Intro/Hero";
-import Skills from "./components/Skills/Skills";
+import Skills from "./components/Skills/Expertise";
 
 type Params = Promise<{ slug?: string[] }>;
 

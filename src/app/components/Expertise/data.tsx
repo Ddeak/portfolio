@@ -29,7 +29,7 @@ export const skillData = [
     content: (
       <p className="text-content">
         <strong>Advanced</strong> skills in developing hybrid mobile apps and
-        cross-platform solutions, Including C++ skills on the RN bridge.
+        cross-platform solutions, including C++ skills on the RN bridge.
       </p>
     ),
   },
@@ -46,12 +46,12 @@ export const skillData = [
   },
   {
     icons: [GithubIcon, NxIcon],
-    title: "Developer Enablement & Leadership",
-    subtitle: "Monorepos, Github",
+    title: "Developer Enablement",
+    subtitle: "Monorepos, GitHub/Lab, CI/CD",
     content: (
       <p className="text-content">
-        Built and maintained multiple backend in various languages and several
-        databases / data stores.
+        Setup and maintained various CI pipelines with Jenkins, Terraform and Github actions. 
+        Experienced with multiple version control systems.
       </p>
     ),
   },
