@@ -9,12 +9,12 @@ import Card from "../Card/Card";
 import Image from "next/image";
 import { skillData } from "./data";
 
-const Skills = () => (
+const Expertise = () => (
   <AnimatePresence>
     <Section id="skills" align="end">
       <Parallax speed={10}>
         <Card>
-          <h2 className="text-4xl text-green-400">Skills</h2>
+          <h2 className="text-4xl text-green-400">Expertise</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {skillData.map((skill, index) => (
@@ -48,4 +48,4 @@ const Skills = () => (
   </AnimatePresence>
 );
 
-export default Skills;
+export default Expertise;
