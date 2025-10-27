@@ -16,4 +16,5 @@ const Page = ({ blok }: PageProps) => (
      : null}
  </div>
 );
+
 export default Page;
