@@ -18,5 +18,11 @@ body {
   section {
     background: #0f2027
   }
+
+  .card {
+    p {
+      text-align: justify;
+    }
+  }
 }
 
