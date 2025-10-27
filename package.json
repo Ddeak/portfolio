@@ -11,11 +11,13 @@
   "dependencies": {
     "@storyblok/js": "^4.4.0",
     "@storyblok/react": "^5.4.17",
+    "@types/react-scroll": "^1.8.10",
     "axios": "^1.12.2",
     "framer-motion": "^12.23.24",
     "next": "16.0.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
+    "react-scroll": "^1.9.3",
     "react-scroll-parallax": "^3.5.0",
     "storyblok-rich-text-react-renderer": "^3.0.1"
   },
