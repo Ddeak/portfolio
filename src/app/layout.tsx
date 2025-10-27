@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import StoryblokProvider from "./components/Storyblok/Provider";
 
 import "./globals.css";
 import Hero from "./components/Intro/Hero";
+import Providers from "./components/Providers";
+import AboutMe from "./components/AboutMe/AboutMe";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,19 +27,19 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <StoryblokProvider>
+    <Providers>
       <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <div className="header-wrapper">
             <Hero />
+            <AboutMe />
           </div>
           <div className="content">{children}</div>
-          
         </body>
       </html>
-    </StoryblokProvider>
+    </Providers>
   );
 };
 
