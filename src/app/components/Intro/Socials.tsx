@@ -16,20 +16,18 @@ const Icons = [
   },
 ];
 
-const Socials = () => {
-  return (
-    <div className="flex flex-row col-gap-[10]">
-      {Icons.map((icon) => (
-        <a key={icon.name} href={icon.link} target="_blank">
-          <Image
-            className="w-[30px] h-[30px]"
-            src={icon.image}
-            alt={`${icon.name} Icon`}
-          />
-        </a>
-      ))}
-    </div>
-  );
-};
+const Socials = () => (
+  <div className="flex flex-row col-gap-[10]">
+    {Icons.map((icon) => (
+      <a key={icon.name} href={icon.link} target="_blank">
+        <Image
+          className="w-[30px] h-[30px]"
+          src={icon.image}
+          alt={`${icon.name} Icon`}
+        />
+      </a>
+    ))}
+  </div>
+);
 
 export default Socials;

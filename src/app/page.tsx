@@ -3,7 +3,7 @@ import { fetchStory } from "@/utils/fetchStory";
 
 import AboutMe from "./components/AboutMe/AboutMe";
 import Hero from "./components/Intro/Hero";
-import Skills from "./components/Skills/Expertise";
+import Expertise from "./components/Expertise/Expertise";
 
 type Params = Promise<{ slug?: string[] }>;
 
@@ -15,7 +15,7 @@ const Page = async ({ params }: { params: Params }) => {
     <>
       <div className="header-wrapper">
         <Hero />
-        <Skills />
+        <Expertise />
         <AboutMe />
       </div>
       <div className="content">
