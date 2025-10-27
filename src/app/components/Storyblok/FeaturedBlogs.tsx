@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   SbBlokData,
 } from '@storyblok/react';
-import { FeaturedBlogs as FeaturedBlogsType } from "../types/storyblok";
+import { FeaturedBlogs as FeaturedBlogsType } from "../../types/storyblok";
 
 interface FeaturedBlogsProps {
   blok: FeaturedBlogsType;
@@ -23,7 +23,6 @@ const FeaturedBlogs = ({ blok }: FeaturedBlogsProps) => {
        <ul className="flex">
         
          {blok.blogs?.map((blog) => {
-            console.log('blog', blog)
            return (
              <li key={'a'} className="pr-8 w-1/3">
                {/* <Link href={`blogs/${blog.slug}`}>

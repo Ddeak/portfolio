@@ -1,7 +1,7 @@
 import { storyblokInit, apiPlugin } from "@storyblok/react";
-import Page from "../app/components/Page";
-import Blog from "../app/components/Blog";
-import FeaturedBlogs from "../app/components/FeaturedBlogs";
+import Page from "../app/components/Storyblok/Page";
+import Blog from "../app/components/Storyblok/Blog";
+import FeaturedBlogs from "../app/components/Storyblok/FeaturedBlogs";
 
 const components = {
   page: Page,

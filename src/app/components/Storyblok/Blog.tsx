@@ -3,7 +3,7 @@ import { render } from "storyblok-rich-text-react-renderer";
 import {
   SbBlokData,
 } from '@storyblok/react';
-import { Blog as BlogType } from "../types/storyblok";
+import { Blog as BlogType } from "../../types/storyblok";
 
 interface BlogProps {
   blok: BlogType;
