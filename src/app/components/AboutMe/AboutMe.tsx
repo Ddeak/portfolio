@@ -12,18 +12,11 @@ const AboutMeText = [
 ];
 
 const AboutMe = () => (
-  <Section id="about-me" align="end">
+  <Section id="about-me">
     <Parallax speed={10}>
       <Card>
         <AnimatePresence>
-          <motion.h2
-            initial="offscreen"
-            whileInView="onscreen"
-            variants={tweenVariant}
-            className="text-4xl mb-3"
-          >
-            About Me
-          </motion.h2>
+          <h2 className="text-4xl text-green-400">About Me</h2>
           {AboutMeText.map((text, i) => (
             <motion.p
               key={`about-me-${i}`}
