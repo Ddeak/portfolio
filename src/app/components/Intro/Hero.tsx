@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Socials from "./Socials";
-import { tweenVariant } from "@/app/common/motion";
+import { tweenVariant } from "@/app/common/motion/motion";
 import Card from "../Card/Card";
 import Section from "../Section/Section";
 

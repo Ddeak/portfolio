@@ -2,7 +2,7 @@
 
 import { Parallax } from "react-scroll-parallax";
 import { motion, AnimatePresence } from "framer-motion";
-import { tweenVariant } from "@/app/common/motion";
+import { tweenVariant } from "@/app/common/motion/motion";
 import Section from "../Section/Section";
 import Card from "../Card/Card";
 
@@ -12,10 +12,10 @@ const AboutMeText = [
 ];
 
 const AboutMe = () => (
-  <Section id="about-me">
-    <Parallax speed={10}>
-      <Card>
-        <AnimatePresence>
+  <Parallax speed={10}>
+    <AnimatePresence>
+      <Section id="about-me">
+        <Card>
           <h2 className="text-4xl text-green-400">About Me</h2>
           {AboutMeText.map((text, i) => (
             <motion.p
@@ -28,10 +28,10 @@ const AboutMe = () => (
               {text}
             </motion.p>
           ))}
-        </AnimatePresence>
-      </Card>
-    </Parallax>
-  </Section>
+        </Card>
+      </Section>
+    </AnimatePresence>
+  </Parallax>
 );
 
 export default AboutMe;

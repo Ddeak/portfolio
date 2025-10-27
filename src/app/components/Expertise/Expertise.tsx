@@ -2,7 +2,7 @@
 
 import { Parallax } from "react-scroll-parallax";
 import { motion, AnimatePresence } from "framer-motion";
-import { tweenVariant } from "@/app/common/motion";
+import { tweenVariant } from "@/app/common/motion/motion";
 
 import Section from "../Section/Section";
 import Card from "../Card/Card";
@@ -10,13 +10,13 @@ import Image from "next/image";
 import { skillData } from "./data";
 
 const Expertise = () => (
-  <AnimatePresence>
-    <Section id="skills" align="end">
-      <Parallax speed={10}>
+  <Parallax speed={10}>
+    <AnimatePresence>
+      <Section id="expertise">
         <Card>
           <h2 className="text-4xl text-green-400">Expertise</h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-4 gap-8">
             {skillData.map((skill, index) => (
               <motion.div
                 key={skill.title}
@@ -43,9 +43,9 @@ const Expertise = () => (
             ))}
           </div>
         </Card>
-      </Parallax>
-    </Section>
-  </AnimatePresence>
+      </Section>
+    </AnimatePresence>
+  </Parallax>
 );
 
 export default Expertise;
