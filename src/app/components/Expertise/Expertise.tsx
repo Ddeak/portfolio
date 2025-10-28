@@ -13,7 +13,7 @@ const Expertise = () => (
   <Parallax speed={10}>
     <AnimatePresence>
       <Section id="expertise">
-        <Card>
+        <Card fullWidth>
           <h2 className="text-4xl text-green-400">Expertise</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-4 gap-8">

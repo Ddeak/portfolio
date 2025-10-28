@@ -14,7 +14,7 @@ const heroItems = [
 
 const Hero = () => (
   <Section id="hero">
-    <Card>
+    <Card fullWidth>
       <AnimatePresence>
         <motion.h1
           initial="offscreen"
