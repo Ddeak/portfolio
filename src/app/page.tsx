@@ -1,15 +1,9 @@
-import { StoryblokStory } from "@storyblok/react/rsc";
-import { fetchStory } from "@/utils/fetchStory";
-
 import AboutMe from "./components/AboutMe/AboutMe";
 import Hero from "./components/Intro/Hero";
 import Expertise from "./components/Expertise/Expertise";
+import ProjectList from "./components/Projects/ProjectList";
 
-type Params = Promise<{ slug?: string[] }>;
-
-const Page = async ({ params }: { params: Params }) => {
-  const slug = (await params).slug;
-  const pageData = await fetchStory("published", slug);
+const Page = async () => {
 
   return (
     <>
@@ -17,9 +11,7 @@ const Page = async ({ params }: { params: Params }) => {
         <Hero />
         <Expertise />
         <AboutMe />
-      </div>
-      <div className="content">
-        <StoryblokStory story={pageData.story} />
+        <ProjectList />
       </div>
     </>
   );

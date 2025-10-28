@@ -1,0 +1,54 @@
+"use client";
+
+import useStories from "@/app/common/storyblok/useStories";
+import { Parallax } from "react-scroll-parallax";
+import { AnimatePresence, motion } from "framer-motion";
+import Section from "../Section/Section";
+import Card from "../Card/Card";
+import { tweenVariant } from "@/app/common/motion/motion";
+import useExcerpt from "@/app/common/storyblok/useExcerpt";
+
+const ProjectList = () => {
+  const { data } = useStories("projects/");
+
+  // TODO Add loding and error state handling
+  if (data.length === 0) return null;
+
+  return (
+    <Parallax speed={10}>
+      <AnimatePresence>
+        <Section id="portfolio">
+          <Card fullWidth>
+            <h2 className="text-4xl text-green-400">Portfolio</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-4 gap-8">
+              {data.map((project, index) => {
+                const excerpt = useExcerpt(project.content);
+
+                return (
+                  <motion.div
+                    key={project.title}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    variants={tweenVariant}
+                    custom={index}
+                    className="flex flex-col items-center max-w-xs"
+                  >
+                    <Card fullBorder>
+                      <h3 className="text-xl">{project.title}</h3>
+                      <div className="my-3 mb-3 h-[1px] border-t-0 bg-green-400 w-50"></div>
+
+                      <p>{excerpt}</p>
+                    </Card>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </Card>
+        </Section>
+      </AnimatePresence>
+    </Parallax>
+  );
+};
+
+export default ProjectList;

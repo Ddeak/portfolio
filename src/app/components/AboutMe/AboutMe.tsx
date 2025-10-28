@@ -15,7 +15,7 @@ const AboutMe = () => (
   <Parallax speed={10}>
     <AnimatePresence>
       <Section id="about-me">
-        <Card>
+        <Card fullWidth>
           <h2 className="text-4xl text-green-400">About Me</h2>
           {AboutMeText.map((text, i) => (
             <motion.p

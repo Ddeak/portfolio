@@ -1,5 +1,4 @@
 import { storyblokEditable } from "@storyblok/react";
-import Link from "next/link";
 import {
   SbBlokData,
 } from '@storyblok/react';
