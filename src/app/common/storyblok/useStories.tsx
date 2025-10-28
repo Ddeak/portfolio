@@ -2,33 +2,29 @@ import { Project } from "@/app/types/storyblok";
 import { fetchStories } from "@/utils/fetchStory";
 import { useEffect, useReducer, useRef } from "react";
 
-type FetchResult = {
+type StoriesResult = {
   data: Project[];
   loading: boolean;
   error: Error | null;
-}
+};
 
 type Action =
-  | { type: 'loading' }
-  | { type: 'success'; payload: Project[] }
-  | { type: 'error'; payload: Error };
+  | { type: "loading" }
+  | { type: "success"; payload: Project[] }
+  | { type: "error"; payload: Error };
 
-const storiesReducer = (
-  state: FetchResult,
-  action: Action
-): FetchResult => {
+const storiesReducer = (state: StoriesResult, action: Action): StoriesResult => {
   switch (action.type) {
-    case 'loading':
+    case "loading":
       return { ...state, loading: true, error: null, data: [] };
-    case 'success':
+    case "success":
       return { ...state, loading: false, data: action.payload };
-    case 'error':
+    case "error":
       return { ...state, loading: false, error: action.payload };
   }
-}
+};
 
-
-const useStories = <T,>(name: string): FetchResult => {
+const useStories = (name: string): StoriesResult => {
   const [state, dispatch] = useReducer(storiesReducer, {
     data: [],
     loading: true,
@@ -37,15 +33,15 @@ const useStories = <T,>(name: string): FetchResult => {
 
   useEffect(() => {
     let cancelled = false;
-    dispatch({ type: 'loading' });
+    dispatch({ type: "loading" });
 
     const getStories = async () => {
       try {
         const projects = await fetchStories(name);
-        dispatch({ type: 'success', payload: projects as Project[] });
+        dispatch({ type: "success", payload: projects as Project[] });
       } catch (e) {
         if (!cancelled) {
-          dispatch({ type: 'error', payload: e as Error });
+          dispatch({ type: "error", payload: e as Error });
         }
       }
     };
@@ -58,6 +54,6 @@ const useStories = <T,>(name: string): FetchResult => {
   }, [name]);
 
   return state;
-}
+};
 
 export default useStories;

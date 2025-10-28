@@ -23,25 +23,26 @@ const ProjectList = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-4 gap-8">
               {data.map((project, index) => {
-                const excerpt = useExcerpt(project.content)
+                const excerpt = useExcerpt(project.content);
 
                 return (
-                <motion.div
-                  key={project.title}
-                  initial="offscreen"
-                  whileInView="onscreen"
-                  variants={tweenVariant}
-                  custom={index}
-                  className="flex flex-col items-center max-w-xs"
-                >
-                  <Card fullBorder>
-                    <h3 className="text-xl">{project.title}</h3>
-                    <div className="my-3 mb-3 h-[1px] border-t-0 bg-green-400 w-50"></div>
+                  <motion.div
+                    key={project.title}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    variants={tweenVariant}
+                    custom={index}
+                    className="flex flex-col items-center max-w-xs"
+                  >
+                    <Card fullBorder>
+                      <h3 className="text-xl">{project.title}</h3>
+                      <div className="my-3 mb-3 h-[1px] border-t-0 bg-green-400 w-50"></div>
 
-                    <p>{excerpt}</p>
-                  </Card>
-                </motion.div>
-)})}
+                      <p>{excerpt}</p>
+                    </Card>
+                  </motion.div>
+                );
+              })}
             </div>
           </Card>
         </Section>
