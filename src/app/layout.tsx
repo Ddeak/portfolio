@@ -4,6 +4,24 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from "./components/Providers";
 import TopNav from "./components/Navigation/TopNav";
+import { storyblokInit, apiPlugin } from "@storyblok/react";
+import Page from "@/app/components/Storyblok/Page";
+import Blog from "@/app/components/Storyblok/Blog";
+import FeaturedBlogs from "@/app/components/Storyblok/FeaturedBlogs";
+import Project from "@/app/components/Storyblok/Project";
+
+const components = {
+  page: Page,
+  recipe: Blog,
+  featuredBlogs: FeaturedBlogs,
+  project: Project,
+};
+
+storyblokInit({
+  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_CONTENT_API_ACCESS_TOKEN,
+  components,
+  use: [apiPlugin],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,8 +49,10 @@ const RootLayout = ({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <TopNav />
-          {children}
+          <div className="header-wrapper">
+            <TopNav />
+            {children}
+          </div>
         </body>
       </html>
     </Providers>

@@ -1,7 +1,7 @@
 export const navLinks = [
   {
     label: "Home",
-    link: "hero",
+    link: "/",
   },
   {
     label: "Expertise",
