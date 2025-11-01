@@ -1,19 +1,19 @@
-import { Project } from "@/app/types/storyblok";
 import { fetchStories } from "@/utils/fetchStory";
-import { useEffect, useReducer, useRef } from "react";
+import { useEffect, useReducer } from "react";
 
-type StoriesResult = {
-  data: Project[];
+type StoriesResult<T> = {
+  data: T[];
   loading: boolean;
   error: Error | null;
 };
 
-type Action =
+type Action<T> =
   | { type: "loading" }
-  | { type: "success"; payload: Project[] }
+  | { type: "success"; payload: T[] }
   | { type: "error"; payload: Error };
 
-const storiesReducer = (state: StoriesResult, action: Action): StoriesResult => {
+
+const storiesReducer = <T,>(state: StoriesResult<T>, action: Action<T>): StoriesResult<T> => {
   switch (action.type) {
     case "loading":
       return { ...state, loading: true, error: null, data: [] };
@@ -24,7 +24,7 @@ const storiesReducer = (state: StoriesResult, action: Action): StoriesResult => 
   }
 };
 
-const useStories = (name: string): StoriesResult => {
+const useStories = <T, >(name: string): StoriesResult<T> => {
   const [state, dispatch] = useReducer(storiesReducer, {
     data: [],
     loading: true,
@@ -37,8 +37,9 @@ const useStories = (name: string): StoriesResult => {
 
     const getStories = async () => {
       try {
-        const projects = await fetchStories(name);
-        dispatch({ type: "success", payload: projects as Project[] });
+        const items = await fetchStories(name) as T[];
+        // @ts-expect-error
+        dispatch({ type: "success", payload: items });
       } catch (e) {
         if (!cancelled) {
           dispatch({ type: "error", payload: e as Error });

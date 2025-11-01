@@ -34,23 +34,3 @@ export const fetchStories = async (
   const data = (await response.json()) as StoryblokMultilinkLink;
   return data.stories.map((story: any) => story.content);
 };
-
-export const fetchStory = async (
-  version: VersionType,
-  slug?: string[],
-  resolve_relations?: [string]
-) => {
-  getStoryblokApi();
-
-  return fetch(
-    constructAPIUrl(
-      `/${slug ? slug.join("/") : "home"}`,
-      version,
-      resolve_relations
-    ),
-    {
-      next: { tags: ["cms"] },
-      cache: version === "published" ? "default" : "no-store",
-    }
-  ).then((res) => res.json()) as Promise<{ stories: ISbResponse }>;
-};

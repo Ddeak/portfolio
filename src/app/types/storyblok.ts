@@ -22,7 +22,7 @@ export interface FeaturedBlogs {
 }
 
 export interface Page {
-  body?: (Blog | FeaturedBlogs | Page | Project | ProjectList)[];
+  body?: (Blog | FeaturedBlogs | Page | Project)[];
   component: "page";
   _uid: string;
   [k: string]: unknown;
@@ -34,14 +34,6 @@ export interface Project {
   image?: StoryblokAsset;
   content?: StoryblokRichtext;
   component: "project";
-  _uid: string;
-  [k: string]: unknown;
-}
-
-export interface ProjectList {
-  title?: string;
-  projects?: (ISbStoryData<Project> | string)[];
-  component: "projectList";
   _uid: string;
   [k: string]: unknown;
 }
