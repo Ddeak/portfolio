@@ -17,7 +17,7 @@ const FeaturedBlogs = ({ blok }: FeaturedBlogsProps) => {
    >
      <div className="relative">
        <h2 className="relative font-serif text-4xl z-10 text-primary">
-         {blok.title}1234
+         {blok.title}
        </h2>
        <ul className="flex">
         

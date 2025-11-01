@@ -12,8 +12,8 @@ type Action<T> =
   | { type: "success"; payload: T[] }
   | { type: "error"; payload: Error };
 
-//@ts-ignore
-const storiesReducer = (state: StoriesResult, action: Action): StoriesResult => {
+
+const storiesReducer = <T,>(state: StoriesResult<T>, action: Action<T>): StoriesResult<T> => {
   switch (action.type) {
     case "loading":
       return { ...state, loading: true, error: null, data: [] };
@@ -37,8 +37,9 @@ const useStories = <T, >(name: string): StoriesResult<T> => {
 
     const getStories = async () => {
       try {
-        const projects = await fetchStories(name);
-        dispatch({ type: "success", payload: projects as T[] });
+        const items = await fetchStories(name) as T[];
+        // @ts-expect-error
+        dispatch({ type: "success", payload: items });
       } catch (e) {
         if (!cancelled) {
           dispatch({ type: "error", payload: e as Error });
