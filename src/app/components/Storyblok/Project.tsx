@@ -13,13 +13,15 @@ const Project = ({ blok }: BlogProps) => (
     <Back />
     <div className="text-xl text-green-400">{render(blok.subtitle)}</div>
 
-    <Image
-      className="rounded-lg mt-4"
-      src={blok.image.filename}
-      alt=""
-      width="200"
-      height="400"
-    />
+    {blok.image.filename && (
+      <Image
+        className="rounded-lg mt-4"
+        src={blok.image.filename}
+        alt=""
+        width="200"
+        height="300"
+      />
+    )}
 
     <div className="prose">
       <StoryblokRichText doc={blok.content} />

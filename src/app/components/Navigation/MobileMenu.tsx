@@ -1,21 +1,14 @@
-import { Link } from "react-scroll";
-import { navLinks } from "./links";
+import { useIsHomePage } from "@/app/common/nav/useIsHomepage";
+import { HomeLinks, PageLinks } from "./links";
 
-const MobileMenu = () => (
-  <ul className="flex flex-col p-4 pt-0 md:hidden w-full">
-    {navLinks.map((link) => (
-      <li key={link.label}>
-        <Link
-          to={link.link}
-          smooth
-          className="cursor-pointer block py-2 px-3 text-white rounded-sm md:hover:bg-transparent md:p-0 hover:bg-green-400"
-          aria-current="page"
-        >
-          {link.label}
-        </Link>
-      </li>
-    ))}
-  </ul>
-);
+const MobileMenu = () => {
+  const isHomepage = useIsHomePage();
+  
+  return (
+    <ul className="flex flex-col p-4 pt-0 md:hidden w-full">
+      {isHomepage ? <HomeLinks /> : <PageLinks />}
+    </ul>
+  );
+};
 
 export default MobileMenu;
