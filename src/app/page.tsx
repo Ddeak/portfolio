@@ -8,8 +8,8 @@ const Page = async () => {
     <>
       <Hero />
       <Expertise />
-      <AboutMe />
       <ProjectList />
+      <AboutMe />
     </>
   );
 };

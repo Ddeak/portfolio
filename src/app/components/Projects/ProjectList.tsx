@@ -27,6 +27,7 @@ const ProjectList = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-4 gap-8">
               {data.map((project, index) => {
                 const excerpt = useExcerpt(project.content);
+                const file = project.image.filename || null;
 
                 return (
                   <motion.div
@@ -42,14 +43,16 @@ const ProjectList = () => {
                       fullBorder
                       link={`/projects/${project.title}`}
                     >
-                      <Image
-                        src={project.image.filename ?? null}
-                        className="rounded-lg"
-                        width="320"
-                        height="100"
-                        alt=""
-                      />
-                      <h3 className="text-xl !my-0">{project.title}</h3>
+                      {file && (
+                        <Image
+                          src={file}
+                          className="rounded-lg h-[295px]"
+                          width="320"
+                          height="295"
+                          alt=""
+                        />
+                      )}
+                      <h3 className={`text-xl !my-0 ${file ? '' : 'pt-4'}`}>{project.title}</h3>
                       <p className="px-6 pb-6 text-content">{excerpt}</p>
                     </Card>
                   </motion.div>
