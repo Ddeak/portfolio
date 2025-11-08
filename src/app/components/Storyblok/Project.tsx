@@ -11,7 +11,7 @@ interface BlogProps {
 const Project = ({ blok }: BlogProps) => (
   <div key={blok._uid} className="pt-24 px-8 flex flex-col pb-12 max-w-5xl">
     <Back />
-    <div className="text-xl text-green-400">{render(blok.subtitle)}</div>
+    <div className="text-xl text-emerald-400">{render(blok.subtitle)}</div>
 
     {blok.image.filename && (
       <Image

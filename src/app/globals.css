@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
-.prose h2, h3 {
-  @apply text-2xl font-bold mt-8 mb-4 text-green-400;
+@theme { --color-secondary: #94A3B8; }
+
+
+.prose h2, .prose h3 {
+  @apply text-2xl mt-8 mb-4 text-emerald-400;
 }
 
 .prose pre {
-  @apply bg-gray-900/30 border-green-400 border-1 my-4 text-[#d4d4d4] p-4 rounded-lg overflow-x-auto;
+  @apply bg-gray-900/30 border-emerald-400 border-1 my-4 text-[#d4d4d4] p-4 rounded-lg overflow-x-auto;
 }
 .prose code {
   @apply font-mono text-sm;
@@ -16,8 +19,13 @@
 }
 
 .prose :where(li)::before {
-  @apply absolute left-1 top-2.5 h-1.5 w-1.5 rounded-full content-[''] bg-green-400;
+  @apply absolute left-1 top-2.5 h-1.5 w-1.5 rounded-full content-[''] bg-emerald-400;
 }
+
+.font-inter {
+  font-family: "Inter", ui-sans-serif, system-ui;
+}
+
 
 
 :root {
@@ -27,13 +35,14 @@
 
 body {
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 
   #hero {
     background: #0f2027;
     background: -webkit-linear-gradient(to top, #0f2027, #203a43, #2c5364);
     background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
     background-repeat: no-repeat;
+
+    padding-top: 100px;
   }
 
   section {

@@ -3,7 +3,7 @@ import { renderRichText } from "@storyblok/react";
 // @ts-expect-error
 import type { StoryblokRichtext } from "@/app/types/storyblok.d.ts";
 
-const RICH_TEXT_MAX = 80;
+const RICH_TEXT_MAX = 120;
 
 const useExcerpt = (richText: StoryblokRichtext) => {
   const html = renderRichText(richText);

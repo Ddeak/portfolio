@@ -17,7 +17,7 @@ const Icons = [
 ];
 
 const Socials = () => (
-  <div className="flex flex-row col-gap-[10]">
+  <div className="flex flex-row gap-x-3">
     {Icons.map((icon) => (
       <a key={icon.name} href={icon.link} target="_blank">
         <Image

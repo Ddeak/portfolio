@@ -4,11 +4,15 @@ import NextLink from "next/link";
 const homeLinks = [
   {
     label: "Home",
-    link: "/",
+    link: "hero",
   },
   {
     label: "Expertise",
     link: "expertise",
+  },
+  {
+    label: "Projects",
+    link: "projects",
   },
   {
     label: "About",

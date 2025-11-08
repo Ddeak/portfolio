@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { tweenVariant } from "@/app/common/motion/motion";
 
 import Section from "../Section/Section";
-import Card from "../Card/Card";
 import Image from "next/image";
 import { skillData } from "./data";
 
@@ -13,36 +12,34 @@ const Expertise = () => (
   <Parallax speed={10}>
     <AnimatePresence>
       <Section id="expertise">
-        <Card fullWidth>
-          <h2 className="text-4xl text-green-400">Expertise</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-4 gap-8">
-            {skillData.map((skill, index) => (
-              <motion.div
-                key={skill.title}
-                initial="offscreen"
-                whileInView="onscreen"
-                variants={tweenVariant}
-                custom={index}
-                className="flex flex-col items-center max-w-xs"
-              >
-                <div className="w-full flex flex-row justify-center mb-2 gap-x-2">
+        <h2 className="text-2xl font-bold text-slate-300">Expertise</h2>
+        <div className="flex flex-col max-w-4xl">
+          {skillData.map((skill, index) => (
+            <motion.div
+              key={skill.title}
+              initial="offscreen"
+              whileInView="onscreen"
+              variants={tweenVariant}
+              custom={index}
+              className="flex flex-col"
+            >
+              <div className="flex flex-col sm:flex-row sm:gap-x-6">
+                <h3 className="text-xl my-4 text-emerald-400">{skill.title}</h3>
+                <div className="flex flex-row mb-2 gap-x-3 mb-4 sm:mb-0 sm:items-center">
                   {skill.icons.map((icon, i) => (
                     <Image
                       key={`skill-icon-${i}`}
-                      className="w-[30px] h-[30px]"
+                      className="w-[25px] h-[25px]"
                       src={icon}
                       alt=""
                     />
                   ))}
                 </div>
-                <h3 className="text-xl">{skill.title}</h3>
-                <div className="my-3 mb-3 h-[1px] border-t-0 bg-green-400 w-50"></div>
-                {skill.content}
-              </motion.div>
-            ))}
-          </div>
-        </Card>
+              </div>
+              {skill.content}
+            </motion.div>
+          ))}
+        </div>
       </Section>
     </AnimatePresence>
   </Parallax>
