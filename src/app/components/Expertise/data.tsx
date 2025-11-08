@@ -16,8 +16,8 @@ export const skillData = [
     title: "Senior Frontend Developer",
     subtitle: "React, NextJS",
     content: (
-      <p className="text-content">
-        <strong>Mastering</strong> React since 2016. <strong>Expert</strong> in
+      <p className="text-secondary">
+        <strong className="text-slate-300">Mastering</strong> React since 2016. <strong className="text-slate-300">Expert</strong> in
         all things React and popular tools that come with it.
       </p>
     ),
@@ -27,8 +27,8 @@ export const skillData = [
     title: "Cross-Platform Mobile",
     subtitle: "React Native",
     content: (
-      <p className="text-content">
-        <strong>Advanced</strong> skills in developing hybrid mobile apps and
+      <p className="text-secondary">
+        <strong className="text-slate-300">Advanced</strong> skills in developing hybrid mobile apps and
         cross-platform solutions, including C++ skills on the RN bridge.
       </p>
     ),
@@ -38,7 +38,7 @@ export const skillData = [
     title: "Full Stack Architecture",
     subtitle: "Node, Python, Mongo, Postgres, Dynamo",
     content: (
-      <p className="text-content">
+      <p className="text-secondary">
         Built and maintained multiple backend in various languages and several
         databases / data stores.
       </p>
@@ -49,7 +49,7 @@ export const skillData = [
     title: "Developer Enablement",
     subtitle: "Monorepos, GitHub/Lab, CI/CD",
     content: (
-      <p className="text-content">
+      <p className="text-secondary">
         Setup and maintained various CI pipelines with Jenkins, Terraform and Github actions. 
         Experienced with multiple version control systems.
       </p>

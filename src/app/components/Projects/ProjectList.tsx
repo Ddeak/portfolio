@@ -9,7 +9,7 @@ import Image from "next/image";
 import { Project } from "@/app/types/storyblok";
 
 import Section from "../Section/Section";
-import Card from "../Card/Card";
+import { toURL } from "@/utils/toUrl";
 
 const ProjectList = () => {
   const { data } = useStories<Project>("projects/");
@@ -20,46 +20,45 @@ const ProjectList = () => {
   return (
     <Parallax speed={10}>
       <AnimatePresence>
-        <Section id="portfolio">
-          <Card fullWidth>
-            <h2 className="text-4xl text-green-400">Portfolio</h2>
+        <Section id="projects">
+          <div className="flex flex-col max-w-4xl">
+            <h2 className="text-2xl font-bold text-slate-300 mb-4">Projects</h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-4 gap-8">
+            <div className="flex flex-col">
               {data.map((project, index) => {
                 const excerpt = useExcerpt(project.content);
                 const file = project.image.filename || null;
 
                 return (
-                  <motion.div
+                  <motion.a
                     key={project.title}
                     initial="offscreen"
                     whileInView="onscreen"
                     variants={tweenVariant}
                     custom={index}
-                    className="flex flex-col items-center max-w-xs cursor-pointer"
+                    className="flex flex-col items-center cursor-pointer"
+                    href={`/projects/${toURL(project.title)}`}
                   >
-                    <Card
-                      noPadding
-                      fullBorder
-                      link={`/projects/${project.title}`}
-                    >
-                      {file && (
-                        <Image
-                          src={file}
-                          className="rounded-lg h-[295px]"
-                          width="320"
-                          height="295"
-                          alt=""
-                        />
-                      )}
-                      <h3 className={`text-xl !my-0 ${file ? '' : 'pt-4'}`}>{project.title}</h3>
-                      <p className="px-6 pb-6 text-content">{excerpt}</p>
-                    </Card>
-                  </motion.div>
+                    <div className="flex flex-row">
+                      <div className="w-[50px] h-[50px] mt-1">
+                      <Image
+                        src={project.image.filename ?? null}
+                        className="rounded-lg h-full w-full"
+                        width="150"
+                        height="100"
+                        alt=""
+                      />
+                      </div>
+                      <div className="px-6 pb-6 w-[90%]">
+                      <h3 className="text-xl !my-0 text-emerald-400">{project.title}</h3>
+                      <p className="text-secondary">{excerpt}</p>
+                      </div>
+                      </div>
+                  </motion.a>
                 );
               })}
             </div>
-          </Card>
+          </div>
         </Section>
       </AnimatePresence>
     </Parallax>
