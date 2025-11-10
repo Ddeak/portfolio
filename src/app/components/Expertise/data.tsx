@@ -1,14 +1,14 @@
-import ReactIcon from "@/assets/react.svg";
-import AppleIcon from "@/assets/apple.svg";
-import NodeIcon from "@/assets/node.svg";
-import AndroidIcon from "@/assets/android.svg";
-import PythonIcon from "@/assets/python.svg";
-import ReduxIcon from "@/assets/redux.svg";
-import Tailwind from "@/assets/tailwind.svg";
-import ExpoIcon from "@/assets/expo.svg";
-import GithubIcon from "@/assets/github.svg";
-import NxIcon from "@/assets/nx.svg";
-import NextIcon from "@/assets/next.svg";
+import ReactIcon from "@/assets/icons/react.svg";
+import AppleIcon from "@/assets/icons/apple.svg";
+import NodeIcon from "@/assets/icons/node.svg";
+import AndroidIcon from "@/assets/icons/android.svg";
+import PythonIcon from "@/assets/icons/python.svg";
+import ReduxIcon from "@/assets/icons/redux.svg";
+import Tailwind from "@/assets/icons/tailwind.svg";
+import ExpoIcon from "@/assets/icons/expo.svg";
+import GithubIcon from "@/assets/icons/github.svg";
+import NxIcon from "@/assets/icons/nx.svg";
+import NextIcon from "@/assets/icons/next.svg";
 
 export const skillData = [
   {

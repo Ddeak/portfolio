@@ -43,7 +43,7 @@ const RootLayout = ({
         <body
           className="antialiased font-inter"
         >
-          <div className="header-wrapper">
+          <div className="header-wrapper pb-36">
             <TopNav />
             {children}
           </div>

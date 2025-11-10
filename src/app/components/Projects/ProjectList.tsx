@@ -22,12 +22,11 @@ const ProjectList = () => {
       <AnimatePresence>
         <Section id="projects">
           <div className="flex flex-col max-w-4xl">
-            <h2 className="text-2xl font-bold text-slate-300 mb-4">Projects</h2>
+            <h2 className="text-2xl font-bold text-slate-300 mb-1">Projects</h2>
 
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-y-4">
               {data.map((project, index) => {
                 const excerpt = useExcerpt(project.content);
-                const file = project.image.filename || null;
 
                 return (
                   <motion.a
@@ -36,24 +35,27 @@ const ProjectList = () => {
                     whileInView="onscreen"
                     variants={tweenVariant}
                     custom={index}
-                    className="flex flex-col items-center cursor-pointer"
+                    className="flex flex-col items-center cursor-pointer hover:bg-gray-600/30 rounded-lg"
                     href={`/projects/${toURL(project.title)}`}
+                    viewport={{once: true}}
                   >
-                    <div className="flex flex-row">
-                      <div className="w-[50px] h-[50px] mt-1">
-                      <Image
-                        src={project.image.filename ?? null}
-                        className="rounded-lg h-full w-full"
-                        width="150"
-                        height="100"
-                        alt=""
-                      />
+                    <div className="flex flex-row sm:items-center px-4">
+                      <div className="w-[50px] h-[50px] mt-6 sm:mt-0">
+                        <Image
+                          src={project.image.filename ?? null}
+                          className="rounded-lg h-full w-full"
+                          width="150"
+                          height="100"
+                          alt=""
+                        />
                       </div>
-                      <div className="px-6 pb-6 w-[90%]">
-                      <h3 className="text-xl !my-0 text-emerald-400">{project.title}</h3>
-                      <p className="text-secondary">{excerpt}</p>
+                      <div className="px-4 py-2 w-[90%] flex flex-col justify-center">
+                        <h3 className="text-xl !my-0 text-emerald-300">
+                          {project.title} <span className="arrow text-base pb-2">↗</span>
+                        </h3>
+                        <p className="text-secondary">{excerpt}</p>
                       </div>
-                      </div>
+                    </div>
                   </motion.a>
                 );
               })}

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import LinkedIn from "@/assets/linkedIn.svg";
-import GitHub from "@/assets/github.svg";
+import LinkedIn from "@/assets/icons/linkedIn.svg";
+import GitHub from "@/assets/icons/github.svg";
 
 const Icons = [
   {

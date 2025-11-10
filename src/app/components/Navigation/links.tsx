@@ -9,10 +9,12 @@ const homeLinks = [
   {
     label: "Expertise",
     link: "expertise",
+    offset: -100,
   },
   {
     label: "Projects",
     link: "projects",
+    offset: -100,
   },
   {
     label: "About",
@@ -35,6 +37,7 @@ export const HomeLinks = () =>
         smooth
         className="cursor-pointer block py-2 px-3 text-white rounded-sm md:hover:bg-transparent hover:text-green-400 md:p-0"
         aria-current="page"
+        offset={link.offset}
       >
         {link.label}
       </Link>
