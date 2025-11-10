@@ -12,6 +12,11 @@ const homeLinks = [
     offset: -100,
   },
   {
+    label: "Experience",
+    link: "experience",
+    offset: -100,
+  },
+  {
     label: "Projects",
     link: "projects",
     offset: -100,
