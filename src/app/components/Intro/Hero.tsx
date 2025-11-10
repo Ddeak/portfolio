@@ -20,6 +20,7 @@ const Hero = () => (
           whileInView="onscreen"
           variants={tweenVariant}
           className="text-5xl font-bold mb-1"
+          viewport={{once: true}}
         >
           Daniel Deak
         </motion.h1>
@@ -31,6 +32,7 @@ const Hero = () => (
               whileInView="onscreen"
               variants={tweenVariant}
               custom={index + 1}
+              viewport={{once: true}}
             >
               {item}
             </motion.div>

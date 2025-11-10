@@ -22,9 +22,10 @@ const Expertise = () => (
               variants={tweenVariant}
               custom={index}
               className="flex flex-col"
+              viewport={{once: true}}
             >
               <div className="flex flex-col sm:flex-row sm:gap-x-6">
-                <h3 className="text-xl my-4 text-emerald-400">{skill.title}</h3>
+                <h3 className="text-lg my-4 text-emerald-300">{skill.title}</h3>
                 <div className="flex flex-row mb-2 gap-x-3 mb-4 sm:mb-0 sm:items-center">
                   {skill.icons.map((icon, i) => (
                     <Image
