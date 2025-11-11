@@ -4,8 +4,6 @@ import Providers from "./components/Providers";
 import TopNav from "./components/Navigation/TopNav";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import Page from "@/app/components/Storyblok/Page";
-import Blog from "@/app/components/Storyblok/Blog";
-import FeaturedBlogs from "@/app/components/Storyblok/FeaturedBlogs";
 import Project from "@/app/components/Storyblok/Project";
 
 import "./globals.css";
@@ -15,8 +13,6 @@ import "@fontsource/inter/700.css";
 
 const components = {
   page: Page,
-  recipe: Blog,
-  featuredBlogs: FeaturedBlogs,
   project: Project,
 };
 
