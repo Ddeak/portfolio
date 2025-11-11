@@ -1,6 +1,3 @@
-import { ISbResponse } from "@storyblok/react/rsc";
-import { getStoryblokApi } from "@/lib/storyblok";
-
 //@ts-ignore
 import type { StoryblokMultilinkLink } from "@/app/types/storyblok.d.ts";
 
@@ -9,16 +6,18 @@ const token = process.env.NEXT_PUBLIC_STORYBLOK_CONTENT_API_ACCESS_TOKEN;
 
 type VersionType = "draft" | "published";
 
-const constructAPIUrl = (
-  slug: string,
-  version: string,
-  resolve_relations?: [string]
+export const fetchStory = async (
+  content: string,
+  version: VersionType = "published"
 ) => {
-  const relation = resolve_relations?.[0]
-    ? `&resolve_relations=${resolve_relations?.[0]}`
-    : "";
+  if (!token) throw new Error("No Storyblok Token set");
 
-  return `${STORYBLOK_DOMAIN}${slug}?version=${version}&token=${token}${relation}`;
+  const response = await fetch(
+    `${STORYBLOK_DOMAIN}/${content}?token=${token}&version=${version}`
+  );
+
+  const data = (await response.json()) as StoryblokMultilinkLink;
+  return data.story.content;
 };
 
 export const fetchStories = async (

@@ -4,11 +4,11 @@ import { StoryblokRichText } from "@storyblok/react";
 import Back from "../Navigation/Back";
 import Image from "next/image";
 
-interface BlogProps {
+interface ProjectProps {
   blok: ProjectType;
 }
 
-const Project = ({ blok }: BlogProps) => (
+const Project = ({ blok }: ProjectProps) => (
   <div key={blok._uid} className="pt-24 px-8 flex flex-col pb-12 max-w-5xl">
     <Back />
     <div className="text-xl text-emerald-400">{render(blok.subtitle)}</div>

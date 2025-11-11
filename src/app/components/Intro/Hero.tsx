@@ -7,7 +7,7 @@ import Section from "../Section/Section";
 
 const heroItems = [
   <p className="text-lg font-bold mb-4">Senior Frontend Developer</p>,
-  <p className="text-secondary mb-4">Developing UIs and applications for over 10 years. I love solving problems.</p>,
+  <p className="text-secondary">Developing UIs and applications for over 10 years. I love solving problems.</p>,
   <Socials />,
 ];
 

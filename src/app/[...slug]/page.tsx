@@ -9,7 +9,11 @@ interface PageProps {
 
 const SlugPage = async ({ params }: PageProps) => {
   const { slug } = await params;
-  const slugString = slug?.length ? slug.join("/") : "home";
+
+  if (!slug?.length || slug[0] === '.well-known') return null
+
+  const slugString = slug.join("/");
+  
 
   const sbApi = getStoryblokApi();
   if (!sbApi) throw new Error("Storyblok API not initialized");
